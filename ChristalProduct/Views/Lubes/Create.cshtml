@@ -1,0 +1,82 @@
+﻿@model ChristalProduct.Models.Lubes
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Lubes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Brand" class="control-label"></label>
+                <input asp-for="Brand" class="form-control" />
+                <span asp-validation-for="Brand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="SiliconBased" /> @Html.DisplayNameFor(model => model.SiliconBased)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="WaterBased" /> @Html.DisplayNameFor(model => model.WaterBased)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Hybrid" /> @Html.DisplayNameFor(model => model.Hybrid)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Desensitizing" /> @Html.DisplayNameFor(model => model.Desensitizing)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flavor" class="control-label"></label>
+                <input asp-for="Flavor" class="form-control" />
+                <span asp-validation-for="Flavor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddedEffects" class="control-label"></label>
+                <input asp-for="AddedEffects" class="form-control" />
+                <span asp-validation-for="AddedEffects" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImagePath" class="control-label"></label>
+                <input type="hidden" asp-for="ImagePath" />
+                <input type="file" name="ImagePath" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}   
+}
+
